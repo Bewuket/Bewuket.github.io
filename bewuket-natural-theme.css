@@ -1,0 +1,217 @@
+/* ====================================================================
+   BEWUKET TEFERA — NATURAL DARK THEME • v1.0
+   GitHub Pages portfolio — additive/reversible CSS update
+   Deep forest | Navy | Earth | Teal — NO PURPLE
+
+   INSTALL: Append this entire file at the END of your existing styles.css
+   or load it AFTER styles.css with:
+     <link rel="stylesheet" href="bewuket-natural-theme.css">
+
+   No HTML content, JavaScript, CNAME or DNS records are changed.
+   ==================================================================== */
+
+:root {
+  --bt-forest: #0D3512;
+  --bt-navy: #002060;
+  --bt-earth: #7E350E;
+  --bt-teal: #0B4A50;
+  --bt-cream: #F7F9F6;
+  --bt-paper: #FFFFFF;
+  --bt-ink: #18302E;
+  --bt-muted: #526765;
+  --bt-line: #D9E3DC;
+  --bt-focus: #F6C56F;
+
+  /* Existing site tokens — overrides for common naming conventions */
+  --bg: var(--bt-cream);
+  --background: var(--bt-cream);
+  --dark: var(--bt-forest);
+  --accent: var(--bt-teal);
+  --primary: var(--bt-navy);
+  --line: var(--bt-line);
+  --text: var(--bt-ink);
+}
+
+/* 01. Readable foundation */
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--bt-cream);
+  color: var(--bt-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+section[id] { scroll-margin-top: 92px; }
+::selection { background: #C7DDD1; color: var(--bt-forest); }
+
+/* 02. Navigation: deep forest green — covers standard nav conventions */
+:is(body > header, body > nav, .site-header, .site-nav, .navbar, .topbar, .nav-shell, .main-nav) {
+  background: var(--bt-forest) !important;
+  border-bottom-color: #31553A !important;
+  color: white !important;
+}
+:is(body > header, body > nav, .site-header, .site-nav, .navbar, .topbar, .nav-shell, .main-nav)
+  :is(.nav-container, .nav-inner, .header-inner, .header-container, .container) {
+  background-color: transparent;
+}
+:is(body > header, body > nav, .site-header, .site-nav, .navbar, .topbar, .nav-shell, .main-nav)
+  :is(a, .brand, .nav-brand, .logo, .logo-name, .site-title, .menu-toggle, button) {
+  color: #FFFFFF !important;
+}
+:is(body > header, body > nav, .site-header, .site-nav, .navbar, .topbar, .nav-shell, .main-nav) a:hover {
+  color: #E8F5EB !important;
+}
+:is(body > header, body > nav, .site-header, .site-nav, .navbar, .topbar, .nav-shell, .main-nav)
+  :is(.nav-cta, .contact-cta, .nav-button, .header-cta) {
+  background: var(--bt-navy) !important;
+  border-color: #A3BAB0 !important;
+  color: white !important;
+}
+:is(body > header, body > nav, .site-header, .site-nav, .navbar, .topbar, .nav-shell, .main-nav)
+  :is(.nav-cta, .contact-cta, .nav-button, .header-cta):hover {
+  background: var(--bt-teal) !important;
+}
+
+/* 03. Clear section hierarchy, comfortable reading */
+:is(.section-title, .section-heading, .section-header h2, section > h2) {
+  color: var(--bt-navy);
+  line-height: 1.16;
+  letter-spacing: -.025em;
+}
+:is(.section-subtitle, .section-description, .section-sub, .lead) {
+  color: var(--bt-muted);
+  line-height: 1.7;
+}
+:is(.section-label, .section-index, .eyebrow, .section-kicker) {
+  color: var(--bt-teal);
+  letter-spacing: .085em;
+}
+#about { background: var(--bt-cream); }
+#research { background: #EDF4EF; }
+#projects { background: #FFFFFF; }
+#publications { background: #F0F4F8; }
+#outputs { background: #F6F2EB; }
+#teaching { background: #EEF4EF; }
+#contact { background: var(--bt-cream); }
+
+/* 04. Research: four genuinely different DARK cards with WHITE text.
+   Covers both named cards and common grid-based markup. */
+:is(.focus-card, .research-card, .research-interest-card, .interest-card,
+    .focus-grid > *, .research-grid > *, .interests-grid > *, .research-interests-grid > *) {
+  --bt-card-accent: var(--bt-navy);
+  background: var(--bt-card-accent) !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(10,32,30,.095);
+  transition: transform .18s ease, box-shadow .18s ease;
+  color: #FFFFFF !important;
+}
+:is(.focus-card, .research-card, .research-interest-card, .interest-card,
+    .focus-grid > *, .research-grid > *, .interests-grid > *, .research-interests-grid > *):nth-child(4n + 1) {
+  --bt-card-accent: var(--bt-navy);
+}
+:is(.focus-card, .research-card, .research-interest-card, .interest-card,
+    .focus-grid > *, .research-grid > *, .interests-grid > *, .research-interests-grid > *):nth-child(4n + 2) {
+  --bt-card-accent: var(--bt-forest);
+}
+:is(.focus-card, .research-card, .research-interest-card, .interest-card,
+    .focus-grid > *, .research-grid > *, .interests-grid > *, .research-interests-grid > *):nth-child(4n + 3) {
+  --bt-card-accent: var(--bt-earth);
+}
+:is(.focus-card, .research-card, .research-interest-card, .interest-card,
+    .focus-grid > *, .research-grid > *, .interests-grid > *, .research-interests-grid > *):nth-child(4n + 4) {
+  --bt-card-accent: var(--bt-teal);
+}
+:is(.focus-card, .research-card, .research-interest-card, .interest-card,
+    .focus-grid > *, .research-grid > *, .interests-grid > *, .research-interests-grid > *)
+    :is(h2,h3,h4,p,small,span,strong,li,svg,i,.focus-icon,.focus-title,.research-title,.research-description,.card-title,.card-description) {
+  color: #FFFFFF !important;
+  fill: none;
+}
+:is(.focus-card, .research-card, .research-interest-card, .interest-card,
+    .focus-grid > *, .research-grid > *, .interests-grid > *, .research-interests-grid > *) a {
+  color: white !important;
+  text-underline-offset: .18em;
+}
+:is(.focus-card, .research-card, .research-interest-card, .interest-card,
+    .focus-grid > *, .research-grid > *, .interests-grid > *, .research-interests-grid > *)
+    :is(.tag,.chip,.badge,.keyword,.focus-tag,.research-tag) {
+  color: white !important;
+  background: rgba(255,255,255,.14) !important;
+  border-color: rgba(255,255,255,.28) !important;
+}
+@media (hover: hover) {
+  :is(.focus-card, .research-card, .research-interest-card, .interest-card,
+      .focus-grid > *, .research-grid > *, .interests-grid > *, .research-interests-grid > *):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 34px rgba(10,32,30,.17);
+  }
+}
+
+/* 05. Non-research cards stay LIGHT for long-form scientific text */
+:is(.project-card, .publication-card, .output-card, .output-item, .teaching-card) {
+  background: #FFFFFF;
+  color: var(--bt-ink);
+  border-color: var(--bt-line);
+  box-shadow: 0 5px 22px rgba(10,32,30,.055);
+}
+:is(.project-card, .publication-card, .output-card, .output-item, .teaching-card):nth-child(4n + 1) {
+  border-top: 4px solid var(--bt-navy);
+}
+:is(.project-card, .publication-card, .output-card, .output-item, .teaching-card):nth-child(4n + 2) {
+  border-top: 4px solid var(--bt-forest);
+}
+:is(.project-card, .publication-card, .output-card, .output-item, .teaching-card):nth-child(4n + 3) {
+  border-top: 4px solid var(--bt-earth);
+}
+:is(.project-card, .publication-card, .output-card, .output-item, .teaching-card):nth-child(4n + 4) {
+  border-top: 4px solid var(--bt-teal);
+}
+
+/* 06. Buttons, links and focus styles */
+:is(.btn-primary, .button-primary, .primary-button, .cta-button, .contact-button) {
+  background: var(--bt-navy) !important;
+  border-color: var(--bt-navy) !important;
+  color: #FFFFFF !important;
+}
+:is(.btn-primary, .button-primary, .primary-button, .cta-button, .contact-button):hover {
+  background: var(--bt-teal) !important;
+  border-color: var(--bt-teal) !important;
+}
+:is(.btn-secondary, .button-secondary) {
+  border-color: var(--bt-navy);
+  color: var(--bt-navy);
+}
+:is(a,button,input,select,textarea):focus-visible {
+  outline: 3px solid var(--bt-focus);
+  outline-offset: 3px;
+}
+a { text-underline-offset: .18em; }
+
+/* 07. Responsive research grids. Only takes effect if grid classes exist. */
+:is(.focus-grid, .research-grid, .interests-grid, .research-interests-grid) {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: clamp(.9rem,1.5vw,1.35rem);
+  align-items: stretch;
+}
+@media (max-width: 1030px) {
+  :is(.focus-grid, .research-grid, .interests-grid, .research-interests-grid) {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+@media (max-width: 640px) {
+  :is(.focus-grid, .research-grid, .interests-grid, .research-interests-grid) {
+    grid-template-columns: minmax(0,1fr);
+  }
+  :is(.focus-card,.research-card,.research-interest-card,.interest-card) {
+    border-radius: 14px;
+  }
+  section[id] { scroll-margin-top: 80px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  :is(.focus-card, .research-card, .research-interest-card, .interest-card,
+      .focus-grid > *, .research-grid > *, .interests-grid > *, .research-interests-grid > *) {
+    transition: none;
+  }
+}
