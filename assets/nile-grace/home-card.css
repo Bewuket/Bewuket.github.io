@@ -1,0 +1,4 @@
+/* Nile GRACE project card + standalone media page. No purple. */
+.nile-grace-visual{background:linear-gradient(180deg,rgba(0,32,96,.18),rgba(0,32,96,.67)),url('/assets/nile-grace/nile-poster-web.jpg') center/cover!important}
+.nile-grace-card .project-status{background:#0D3512;color:#fff}
+.nile-grace-card .project-content a{color:#002060}
